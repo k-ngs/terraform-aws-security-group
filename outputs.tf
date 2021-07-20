@@ -43,6 +43,14 @@ output "security_group_description" {
   )[0]
 }
 
+output "ingress_rules" {
+  value = aws_security_group_rule.ingress_with_cidr_blocks
+}
+
+output "egress_rules" {
+  value = aws_security_group_rule.egress_with_cidr_blocks
+}
+
 #output "security_group_ingress" {
 #  description = "The ingress rules"
 #  value       = "${element(concat(aws_security_group.this.*.ingress, list("")), 0)}"
